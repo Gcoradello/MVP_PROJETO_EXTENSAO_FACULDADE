@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07adda27-ca9a-4b75-aa5c-cad7ce80ea0d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-    </list>
+    <list default="true" id="07adda27-ca9a-4b75-aa5c-cad7ce80ea0d" name="Changes" comment="subindo alteraçao de vcs" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -116,8 +114,17 @@
       <option name="presentableId" value="Default" />
       <updated>1774984524147</updated>
       <workItem from="1774984595745" duration="10689000" />
-      <workItem from="1775785893713" duration="4439000" />
+      <workItem from="1775785893713" duration="4634000" />
     </task>
+    <task id="LOCAL-00001" summary="subindo alteraçao de vcs">
+      <option name="closed" value="true" />
+      <created>1775790403889</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1775790403893</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,5 +161,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="subindo alteraçao de vcs" />
+    <option name="LAST_COMMIT_MESSAGE" value="subindo alteraçao de vcs" />
   </component>
 </project>

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>TACTICAL_OS // PERSONNEL_SEARCH</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.min.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary-fixed-variant": "#41474f",
+                        "on-primary-fixed": "#101f09",
+                        "on-secondary": "#223146",
+                        "on-surface-variant": "#c3c8c1",
+                        "primary-container": "#4b5e41",
+                        "on-tertiary-fixed": "#161c23",
+                        "inverse-primary": "#516447",
+                        "tertiary-container": "#535961",
+                        "surface-container-lowest": "#0c0e11",
+                        "secondary": "#b8c7e2",
+                        "secondary-fixed-dim": "#b8c7e2",
+                        "inverse-on-surface": "#2f3034",
+                        "surface-variant": "#333538",
+                        "outline-variant": "#434843",
+                        "on-primary": "#24351c",
+                        "on-surface": "#e2e2e6",
+                        "primary": "#b8cdaa",
+                        "on-primary-fixed-variant": "#3a4c31",
+                        "error-container": "#93000a",
+                        "on-error": "#690005",
+                        "on-background": "#e2e2e6",
+                        "tertiary-fixed": "#dde3ec",
+                        "tertiary-fixed-dim": "#c1c7d0",
+                        "error": "#ffb4ab",
+                        "surface-container": "#1e2023",
+                        "background": "#111316",
+                        "on-tertiary-container": "#cad0d9",
+                        "on-secondary-fixed": "#0c1c30",
+                        "primary-fixed-dim": "#b8cdaa",
+                        "inverse-surface": "#e2e2e6",
+                        "outline": "#8d928c",
+                        "on-secondary-fixed-variant": "#39485d",
+                        "secondary-fixed": "#d4e3fe",
+                        "surface-container-low": "#1a1c1f",
+                        "on-tertiary": "#2b3138",
+                        "on-error-container": "#ffdad6",
+                        "tertiary": "#c1c7d0",
+                        "surface-bright": "#37393d",
+                        "on-secondary-container": "#aab9d3",
+                        "surface-dim": "#111316",
+                        "secondary-container": "#3b4a60",
+                        "primary-fixed": "#d4e9c4",
+                        "surface": "#111316",
+                        "surface-container-high": "#282a2d",
+                        "surface-tint": "#b8cdaa",
+                        "on-primary-container": "#c1d6b2",
+                        "surface-container-highest": "#333538"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0rem", "lg": "0rem", "xl": "0rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            background-color: #111316;
+            color: #e2e2e6;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .modal-content {
+            background-color: #1a1c1f;
+            border: none;
+            border-radius: 0;
+        }
+
+        .btn-check:checked+.btn-outline-success {
+            background-color: #4b5e41;
+            border-color: #b8cdaa;
+            color: #b8cdaa;
+        }
+
+        .btn-check:checked+.btn-outline-danger {
+            background-color: #93000a;
+            border-color: #ffb4ab;
+            color: #ffb4ab;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #111316;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #333538;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-background min-h-screen pb-20">
+    <!-- TopAppBar -->
+    <header
+        class="fixed top-0 w-full z-50 rounded-none bg-[#111316] flex justify-between items-center px-6 h-16 w-full max-w-none">
+        <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-[#b8cdaa] text-xl">terminal</span>
+            <h1 class="font-['Space_Grotesk'] uppercase tracking-widest text-sm font-bold text-[#b8cdaa]">TACTICAL_OS
+            </h1>
+        </div>
+        <nav class="hidden md:flex gap-8">
+            <a class="font-['Space_Grotesk'] uppercase tracking-widest text-sm text-slate-600 hover:text-slate-200 transition-colors"
+                href="/frontend/pages/index.html">Home</a>
+            <a class="font-['Space_Grotesk'] uppercase tracking-widest text-sm text-[#b8cdaa] border-b-2 border-[#b8cdaa] pb-1"
+                href="/frontend/pages/search.html">Search</a>
+            <a class="font-['Space_Grotesk'] uppercase tracking-widest text-sm text-slate-600 hover:text-slate-200 transition-colors"
+                href="/frontend/pages/include.html">Cadastro</a>
+            <a class="font-['Space_Grotesk'] uppercase tracking-widest text-sm text-slate-600 hover:text-slate-200 transition-colors"
+                href="#">Análise</a>
+        </nav>
+        <div class="text-[#b8cdaa] font-['Space_Grotesk'] uppercase tracking-widest text-sm opacity-70">
+            Colocar nome legal
+        </div>
+    </header>
+    <main class="pt-24 px-6 max-w-7xl mx-auto">
+        <!-- Search Header -->
+        <section class="mb-12">
+            <div
+                class="flex flex-col md:flex-row md:items-end justify-between gap-6 bg-surface-container-low p-8 shadow-2xl border-l-4 border-primary">
+                <div class="flex-1 space-y-4">
+                    <label
+                        class="block font-headline text-primary text-xs tracking-[0.2em] font-bold uppercase">Personnel
+                        Filtration Unit</label>
+                    <div class="relative group">
+                        <select
+                            class="w-full bg-surface-container-lowest border-none border-b border-outline-variant text-on-surface py-4 px-4 focus:ring-0 focus:border-primary transition-all font-body appearance-none cursor-pointer">
+                            <option disabled="" selected="" value="">SELECT_PELOTÃO</option>
+                            <option value="alpha">ALPHA_PELOTÃO</option>
+                        </select>
+                        <span
+                            class="material-symbols-outlined absolute right-4 top-4 text-outline pointer-events-none">expand_more</span>
+                    </div>
+                </div>
+                <button
+                    class="bg-primary text-on-primary font-headline font-bold uppercase tracking-widest px-10 py-4 flex items-center justify-center gap-2 hover:bg-primary-fixed-dim active:scale-95 transition-all">
+                    <span class="material-symbols-outlined text-lg">search</span>
+                    Search
+                </button>
+            </div>
+        </section>
+        <!-- Results Grid -->
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
+            <!-- Card 1 -->
+            <div class="bg-surface-container-low p-6 group hover:bg-surface-container-high transition-colors relative">
+                <div
+                    class="absolute top-0 right-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                </div>
+                <div class="flex items-start justify-between mb-6">
+                    <div class="w-16 h-16 bg-surface-container-highest overflow-hidden">
+                        <img class="w-full h-full object-cover grayscale contrast-125"
+                            data-alt="close-up portrait of a serious military officer in tactical gear with neutral studio lighting and dark background"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDV5LXwWqmUn5sMGnihheAR2sEcsvV9ZRXfuLyFopfPO-zcz2-PtDuf2ZuJlkmLwTcvy0KwQj9jQIsrBdUERRPm5mS1LUFusg9JuGKh_pXZmUg0ulRTzsaK9MR4c-yUygcd26CJF4uBUvW3yxONQs0OBEm878jmyhb_gv_zciYWsfNFDoxbu1j4X-texEf67ePMi0MhLu7Upl9TkeIw3y-0grraqZ2J9jrW6z_wF64ssjU34VQAg4goF4X6MNkUIhay4mroCJtAKLE" />
+                    </div>
+                    <span class="font-headline text-[10px] text-outline tracking-widest uppercase">ID: 882-09-AX</span>
+                </div>
+                <div class="space-y-4">
+                    <div>
+                        <p class="font-label text-[10px] text-outline-variant uppercase tracking-tighter mb-1">Full_Name
+                        </p>
+                        <h3 class="font-headline text-lg font-bold text-on-surface">ELIAS_VANCE</h3>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <p class="font-label text-[10px] text-outline-variant uppercase tracking-tighter mb-1">
+                                Pelotão</p>
+                            <p class="font-body text-sm text-primary">ALPHA_PELOTÃO</p>
+                        </div>
+                        <div>
+                            <p class="font-label text-[10px] text-outline-variant uppercase tracking-tighter mb-1">
+                                Birth_Date</p>
+                            <p class="font-body text-sm text-on-surface-variant">12_MAY_1994</p>
+                        </div>
+                    </div>
+                    <button
+                        class="w-full mt-4 bg-secondary-container text-on-secondary-container font-headline text-xs font-bold uppercase tracking-widest py-3 hover:bg-surface-container-highest transition-colors flex items-center justify-center gap-2"
+                        data-bs-target="#infoModal" data-bs-toggle="modal">
+                        <span class="material-symbols-outlined text-sm">visibility</span>
+                        Information
+                    </button>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="bg-surface-container-low p-6 group hover:bg-surface-container-high transition-colors relative">
+                <div
+                    class="absolute top-0 right-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                </div>
+                <div class="flex items-start justify-between mb-6">
+                    <div class="w-16 h-16 bg-surface-container-highest overflow-hidden">
+                        <img class="w-full h-full object-cover grayscale contrast-125"
+                            data-alt="professional headshot of a female tactical specialist in dark uniform with focused expression and dramatic shadows"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmqAZ4NhfT2jeU1mqjW6fj34VCXPT_swi1JjaIvZdDhMOI2mlXRsmRMEs3qhCLy0VYurd5OnZXnGFFiERytSISMA24GsjteVkovMLUXU9FX9egQKRFR-i2gwvt6NTiDovQ_zA-_7kSsvHcAuYcGDsXbqnRuGpJVqXkuJiwSOg-NzEixHC9K-1rTeRDlGET4gSV7lEmHhXdwKd4oV_AlOoN8UZjezVv6aSrgXy-C6sF-49hI6N_7PVUEeFOqBQgIaads8MPcRbQgA0" />
+                    </div>
+                    <span class="font-headline text-[10px] text-outline tracking-widest uppercase">ID: 412-11-BC</span>
+                </div>
+                <div class="space-y-4">
+                    <div>
+                        <p class="font-label text-[10px] text-outline-variant uppercase tracking-tighter mb-1">Full_Name
+                        </p>
+                        <h3 class="font-headline text-lg font-bold text-on-surface">JUDITH_MOSS</h3>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <p class="font-label text-[10px] text-outline-variant uppercase tracking-tighter mb-1">
+                                Pelotão</p>
+                            <p class="font-body text-sm text-primary">ALPHA_PELOTÃO</p>
+                        </div>
+                        <div>
+                            <p class="font-label text-[10px] text-outline-variant uppercase tracking-tighter mb-1">
+                                Birth_Date</p>
+                            <p class="font-body text-sm text-on-surface-variant">22_NOV_1989</p>
+                        </div>
+                    </div>
+                    <button
+                        class="w-full mt-4 bg-secondary-container text-on-secondary-container font-headline text-xs font-bold uppercase tracking-widest py-3 hover:bg-surface-container-highest transition-colors flex items-center justify-center gap-2"
+                        data-bs-target="#infoModal" data-bs-toggle="modal">
+                        <span class="material-symbols-outlined text-sm">visibility</span>
+                        Information
+                    </button>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="bg-surface-container-low p-6 group hover:bg-surface-container-high transition-colors relative">
+                <div
+                    class="absolute top-0 right-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                </div>
+                <div class="flex items-start justify-between mb-6">
+                    <div class="w-16 h-16 bg-surface-container-highest overflow-hidden">
+                        <img class="w-full h-full object-cover grayscale contrast-125"
+                            data-alt="side profile of a military commando wearing a headset and dark fatigues in a low light environment"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMDXTKdIR1EWJ6EaG-MvLpZfn8kIBDHFA7U9jbwuHl7nIADB5D2kQ5UpAYJAamQ_wnmFRatSLSDD5KUf1XYdofxfH2bgBfmAJ8IpKRdPArL4trWbupUjZNooGBD1w0FlsZ3yDRMQDS2GA_wWnW4q0zFUU8t-pnX64pVmT2U5BrAVnuX4kEARwDQQK5Ry5WYE0qQ5eKQQUoeIBrlxUgd0oAoshWoAeVOhBz0OYmdpiJWVBT5Yy9HFJwv9D_g7rLmha7fJcPwP1mp3o" />
+                    </div>
+                    <span class="font-headline text-[10px] text-outline tracking-widest uppercase">ID: 009-54-KR</span>
+                </div>
+                <div class="space-y-4">
+                    <div>
+                        <p class="font-label text-[10px] text-outline-variant uppercase tracking-tighter mb-1">Full_Name
+                        </p>
+                        <h3 class="font-headline text-lg font-bold text-on-surface">BARNEY_CALHOUN</h3>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <p class="font-label text-[10px] text-outline-variant uppercase tracking-tighter mb-1">
+                                Pelotão</p>
+                            <p class="font-body text-sm text-primary">ALPHA_PELOTÃO</p>
+                        </div>
+                        <div>
+                            <p class="font-label text-[10px] text-outline-variant uppercase tracking-tighter mb-1">
+                                Birth_Date</p>
+                            <p class="font-body text-sm text-on-surface-variant">05_SEP_1991</p>
+                        </div>
+                    </div>
+                    <button
+                        class="w-full mt-4 bg-secondary-container text-on-secondary-container font-headline text-xs font-bold uppercase tracking-widest py-3 hover:bg-surface-container-highest transition-colors flex items-center justify-center gap-2"
+                        data-bs-target="#infoModal" data-bs-toggle="modal">
+                        <span class="material-symbols-outlined text-sm">visibility</span>
+                        Information
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Modal -->
+    <div aria-hidden="true" class="modal fade" id="infoModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 bg-surface-container-low ring-1 ring-outline-variant/20">
+                <div class="modal-header border-0 pb-0 px-8 pt-8 flex justify-between items-center">
+                    <h5 class="font-headline font-bold text-primary tracking-widest uppercase">Personnel_Profile_Data
+                    </h5>
+                    <button class="text-outline hover:text-on-surface transition-colors" data-bs-dismiss="modal"
+                        type="button">
+                        <span class="material-symbols-outlined">close</span>
+                    </button>
+                </div>
+                <div class="modal-body p-8">
+                    <div class="mb-8 p-4 bg-surface-container-lowest flex items-center justify-between">
+                        <div>
+                            <p class="font-label text-[10px] text-outline-variant uppercase">Current_Status</p>
+                            <p class="font-headline font-bold text-primary tracking-widest" id="statusLabel">FO+ ACTIVE
+                            </p>
+                        </div>
+                        <div class="w-2 h-12 bg-primary" id="statusBar"></div>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <p class="font-label text-[10px] text-outline-variant uppercase">Deployment_Zone</p>
+                                <p class="font-body text-sm text-on-surface">SECTOR_17_B</p>
+                            </div>
+                            <div>
+                                <p class="font-label text-[10px] text-outline-variant uppercase">Security_Clearance</p>
+                                <p class="font-body text-sm text-on-surface">LEVEL_4_EXECUTIVE</p>
+                            </div>
+                        </div>
+                        <div class="pt-6 border-t border-outline-variant/10">
+                            <p class="font-label text-[10px] text-outline-variant uppercase mb-4">
+                                Tactical_Override_Protocol</p>
+                            <div class="flex gap-3 mb-6">
+                                <button
+                                    class="flex-1 py-3 border-2 border-primary text-primary font-headline text-xs font-bold tracking-widest uppercase transition-all bg-primary/10 hover:bg-primary hover:text-on-primary"
+                                    id="btn-fo-plus" onclick="updateTacticalStatus('plus')">
+                                    FO+ 
+                                </button>
+                                <button
+                                    class="flex-1 py-3 border-2 border-outline-variant text-outline-variant font-headline text-xs font-bold tracking-widest uppercase transition-all hover:border-error hover:text-error hover:bg-error/10"
+                                    id="btn-fo-minus" onclick="updateTacticalStatus('minus')">
+                                    FO- 
+                                </button>
+                            </div>
+                            <div class="space-y-2">
+                                <p class="font-label text-[10px] text-outline-variant uppercase">Field_Notes //
+                                    Observações</p>
+                                <textarea
+                                    class="form-control w-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface font-body text-sm rounded-none focus:ring-1 focus:ring-primary focus:border-primary placeholder:text-outline-variant/50"
+                                    placeholder="Adicionar observações..." rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer border-0 p-8 pt-0">
+                    <button
+                        class="w-full bg-on-surface text-surface font-headline font-bold uppercase tracking-widest py-4 hover:bg-surface-bright transition-all border-2 border-on-surface"
+                        data-bs-dismiss="modal" type="button">Confirm_Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/frontend/scripts/search/popup_fo_selected.js"></script>
+</body>
+
+</html>
