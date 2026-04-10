@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: org.springframework.boot:spring-boot-jdbc-test:4.0.4" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="org.springframework.boot" artifactId="spring-boot-jdbc-test" version="4.0.4" baseVersion="4.0.4" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-jdbc-test/4.0.4/5ddaad40748dac9ab3fc6fd8988f1a62ed4e15e6/spring-boot-jdbc-test-4.0.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-jdbc-test/4.0.4/72e84dd08ee1d2480fb701e029066dbd6d95a6b3/spring-boot-jdbc-test-4.0.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
