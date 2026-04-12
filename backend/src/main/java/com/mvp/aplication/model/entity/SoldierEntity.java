@@ -19,6 +19,7 @@ public class SoldierEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String name;
     private String secondName;
     private String squad;
     private Long soldierId;
