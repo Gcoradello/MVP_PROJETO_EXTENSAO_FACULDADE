@@ -81,6 +81,8 @@
             },
         }
     </script>
+    <script type="module" src="/frontend/scripts/search/search-squad/squad-main.js"></script>
+    <script type="module" src="/frontend/scripts/search/search-squad/modal-fo.js"></script>
     <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -163,6 +165,7 @@
                         Filtration Unit</label>
                     <div class="relative group">
                         <select
+                            id="search-input"
                             class="w-full bg-surface-container-lowest border-none border-b border-outline-variant text-on-surface py-4 px-4 focus:ring-0 focus:border-primary transition-all font-body appearance-none cursor-pointer">
                             <option disabled="" selected="" value="">SELECT_PELOTÃO</option>
                             <option value="alpha">ALPHA_PELOTÃO</option>
@@ -172,6 +175,7 @@
                     </div>
                 </div>
                 <button
+                    id="search-btn"
                     class="bg-primary text-on-primary font-headline font-bold uppercase tracking-widest px-10 py-4 flex items-center justify-center gap-2 hover:bg-primary-fixed-dim active:scale-95 transition-all">
                     <span class="material-symbols-outlined text-lg">search</span>
                     Search
@@ -179,128 +183,11 @@
             </div>
         </section>
         <!-- Results Grid -->
-        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
-            <!-- Card 1 -->
-            <div class="bg-surface-container-low p-6 group hover:bg-surface-container-high transition-colors relative">
-                <div
-                    class="absolute top-0 right-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity">
-                </div>
-                <div class="flex items-start justify-between mb-6">
-                    <div class="w-16 h-16 bg-surface-container-highest overflow-hidden">
-                        <img class="w-full h-full object-cover grayscale contrast-125"
-                            data-alt="close-up portrait of a serious military officer in tactical gear with neutral studio lighting and dark background"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDV5LXwWqmUn5sMGnihheAR2sEcsvV9ZRXfuLyFopfPO-zcz2-PtDuf2ZuJlkmLwTcvy0KwQj9jQIsrBdUERRPm5mS1LUFusg9JuGKh_pXZmUg0ulRTzsaK9MR4c-yUygcd26CJF4uBUvW3yxONQs0OBEm878jmyhb_gv_zciYWsfNFDoxbu1j4X-texEf67ePMi0MhLu7Upl9TkeIw3y-0grraqZ2J9jrW6z_wF64ssjU34VQAg4goF4X6MNkUIhay4mroCJtAKLE" />
-                    </div>
-                    <span class="font-headline text-[10px] text-outline tracking-widest uppercase">ID: 882-09-AX</span>
-                </div>
-                <div class="space-y-4">
-                    <div>
-                        <p class="font-label text-[10px] text-outline-variant uppercase tracking-tighter mb-1">Full_Name
-                        </p>
-                        <h3 class="font-headline text-lg font-bold text-on-surface">ELIAS_VANCE</h3>
-                    </div>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <p class="font-label text-[10px] text-outline-variant uppercase tracking-tighter mb-1">
-                                Pelotão</p>
-                            <p class="font-body text-sm text-primary">ALPHA_PELOTÃO</p>
-                        </div>
-                        <div>
-                            <p class="font-label text-[10px] text-outline-variant uppercase tracking-tighter mb-1">
-                                Birth_Date</p>
-                            <p class="font-body text-sm text-on-surface-variant">12_MAY_1994</p>
-                        </div>
-                    </div>
-                    <button
-                        class="w-full mt-4 bg-secondary-container text-on-secondary-container font-headline text-xs font-bold uppercase tracking-widest py-3 hover:bg-surface-container-highest transition-colors flex items-center justify-center gap-2"
-                        data-bs-target="#infoModal" data-bs-toggle="modal">
-                        <span class="material-symbols-outlined text-sm">visibility</span>
-                        Information
-                    </button>
-                </div>
-            </div>
-            <!-- Card 2 -->
-            <div class="bg-surface-container-low p-6 group hover:bg-surface-container-high transition-colors relative">
-                <div
-                    class="absolute top-0 right-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity">
-                </div>
-                <div class="flex items-start justify-between mb-6">
-                    <div class="w-16 h-16 bg-surface-container-highest overflow-hidden">
-                        <img class="w-full h-full object-cover grayscale contrast-125"
-                            data-alt="professional headshot of a female tactical specialist in dark uniform with focused expression and dramatic shadows"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmqAZ4NhfT2jeU1mqjW6fj34VCXPT_swi1JjaIvZdDhMOI2mlXRsmRMEs3qhCLy0VYurd5OnZXnGFFiERytSISMA24GsjteVkovMLUXU9FX9egQKRFR-i2gwvt6NTiDovQ_zA-_7kSsvHcAuYcGDsXbqnRuGpJVqXkuJiwSOg-NzEixHC9K-1rTeRDlGET4gSV7lEmHhXdwKd4oV_AlOoN8UZjezVv6aSrgXy-C6sF-49hI6N_7PVUEeFOqBQgIaads8MPcRbQgA0" />
-                    </div>
-                    <span class="font-headline text-[10px] text-outline tracking-widest uppercase">ID: 412-11-BC</span>
-                </div>
-                <div class="space-y-4">
-                    <div>
-                        <p class="font-label text-[10px] text-outline-variant uppercase tracking-tighter mb-1">Full_Name
-                        </p>
-                        <h3 class="font-headline text-lg font-bold text-on-surface">JUDITH_MOSS</h3>
-                    </div>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <p class="font-label text-[10px] text-outline-variant uppercase tracking-tighter mb-1">
-                                Pelotão</p>
-                            <p class="font-body text-sm text-primary">ALPHA_PELOTÃO</p>
-                        </div>
-                        <div>
-                            <p class="font-label text-[10px] text-outline-variant uppercase tracking-tighter mb-1">
-                                Birth_Date</p>
-                            <p class="font-body text-sm text-on-surface-variant">22_NOV_1989</p>
-                        </div>
-                    </div>
-                    <button
-                        class="w-full mt-4 bg-secondary-container text-on-secondary-container font-headline text-xs font-bold uppercase tracking-widest py-3 hover:bg-surface-container-highest transition-colors flex items-center justify-center gap-2"
-                        data-bs-target="#infoModal" data-bs-toggle="modal">
-                        <span class="material-symbols-outlined text-sm">visibility</span>
-                        Information
-                    </button>
-                </div>
-            </div>
-            <!-- Card 3 -->
-            <div class="bg-surface-container-low p-6 group hover:bg-surface-container-high transition-colors relative">
-                <div
-                    class="absolute top-0 right-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity">
-                </div>
-                <div class="flex items-start justify-between mb-6">
-                    <div class="w-16 h-16 bg-surface-container-highest overflow-hidden">
-                        <img class="w-full h-full object-cover grayscale contrast-125"
-                            data-alt="side profile of a military commando wearing a headset and dark fatigues in a low light environment"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMDXTKdIR1EWJ6EaG-MvLpZfn8kIBDHFA7U9jbwuHl7nIADB5D2kQ5UpAYJAamQ_wnmFRatSLSDD5KUf1XYdofxfH2bgBfmAJ8IpKRdPArL4trWbupUjZNooGBD1w0FlsZ3yDRMQDS2GA_wWnW4q0zFUU8t-pnX64pVmT2U5BrAVnuX4kEARwDQQK5Ry5WYE0qQ5eKQQUoeIBrlxUgd0oAoshWoAeVOhBz0OYmdpiJWVBT5Yy9HFJwv9D_g7rLmha7fJcPwP1mp3o" />
-                    </div>
-                    <span class="font-headline text-[10px] text-outline tracking-widest uppercase">ID: 009-54-KR</span>
-                </div>
-                <div class="space-y-4">
-                    <div>
-                        <p class="font-label text-[10px] text-outline-variant uppercase tracking-tighter mb-1">Full_Name
-                        </p>
-                        <h3 class="font-headline text-lg font-bold text-on-surface">BARNEY_CALHOUN</h3>
-                    </div>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <p class="font-label text-[10px] text-outline-variant uppercase tracking-tighter mb-1">
-                                Pelotão</p>
-                            <p class="font-body text-sm text-primary">ALPHA_PELOTÃO</p>
-                        </div>
-                        <div>
-                            <p class="font-label text-[10px] text-outline-variant uppercase tracking-tighter mb-1">
-                                Birth_Date</p>
-                            <p class="font-body text-sm text-on-surface-variant">05_SEP_1991</p>
-                        </div>
-                    </div>
-                    <button
-                        class="w-full mt-4 bg-secondary-container text-on-secondary-container font-headline text-xs font-bold uppercase tracking-widest py-3 hover:bg-surface-container-highest transition-colors flex items-center justify-center gap-2"
-                        data-bs-target="#infoModal" data-bs-toggle="modal">
-                        <span class="material-symbols-outlined text-sm">visibility</span>
-                        Information
-                    </button>
-                </div>
-            </div>
-        </section>
+        <section id="users-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+</section>
     </main>
     <!-- Modal -->
-    <div aria-hidden="true" class="modal fade" id="infoModal" tabindex="-1">
+    <div aria-hidden="true" class="modal fade" id="foModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content border-0 bg-surface-container-low ring-1 ring-outline-variant/20">
                 <div class="modal-header border-0 pb-0 px-8 pt-8 flex justify-between items-center">
@@ -337,12 +224,12 @@
                             <div class="flex gap-3 mb-6">
                                 <button
                                     class="flex-1 py-3 border-2 border-primary text-primary font-headline text-xs font-bold tracking-widest uppercase transition-all bg-primary/10 hover:bg-primary hover:text-on-primary"
-                                    id="btn-fo-plus" onclick="updateTacticalStatus('plus')">
+                                    id="btn-fo-plus">
                                     FO+ 
                                 </button>
                                 <button
                                     class="flex-1 py-3 border-2 border-outline-variant text-outline-variant font-headline text-xs font-bold tracking-widest uppercase transition-all hover:border-error hover:text-error hover:bg-error/10"
-                                    id="btn-fo-minus" onclick="updateTacticalStatus('minus')">
+                                    id="btn-fo-minus" >
                                     FO- 
                                 </button>
                             </div>
@@ -350,6 +237,7 @@
                                 <p class="font-label text-[10px] text-outline-variant uppercase">Field_Notes //
                                     Observações</p>
                                 <textarea
+                                    id="obs-FO"
                                     class="form-control w-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface font-body text-sm rounded-none focus:ring-1 focus:ring-primary focus:border-primary placeholder:text-outline-variant/50"
                                     placeholder="Adicionar observações..." rows="3"></textarea>
                             </div>
@@ -358,6 +246,7 @@
                 </div>
                 <div class="modal-footer border-0 p-8 pt-0">
                     <button
+                        id="btn-submit-fo"
                         class="w-full bg-on-surface text-surface font-headline font-bold uppercase tracking-widest py-4 hover:bg-surface-bright transition-all border-2 border-on-surface"
                         data-bs-dismiss="modal" type="button">Confirm_Changes</button>
                 </div>
@@ -365,7 +254,6 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/frontend/scripts/search/popup_fo_selected.js"></script>
 </body>
 
 </html>

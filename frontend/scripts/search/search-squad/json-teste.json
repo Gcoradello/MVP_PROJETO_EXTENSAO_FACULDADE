@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "ELIAS VANCE",
+    "squad": "ALPHA",
+    "birthDate": "1994-05-12",
+    "image": "https://randomuser.me/api/portraits/men/32.jpg"
+  },
+  {
+    "id": 2,
+    "name": "SARAH CONNOR",
+    "squad": "ALPHA",
+    "birthDate": "1988-11-03",
+    "image": "https://randomuser.me/api/portraits/women/44.jpg"
+  },
+  {
+    "id": 3,
+    "name": "JOHN REESE",
+    "squad": "ALPHA",
+    "birthDate": "1990-07-21",
+    "image": "https://randomuser.me/api/portraits/men/65.jpg"
+  }
+]
