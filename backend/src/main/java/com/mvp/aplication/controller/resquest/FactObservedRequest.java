@@ -14,6 +14,7 @@ public class FactObservedRequest {
     // todo - colocar validaçoes
 
     private String soldierId;
+    private String squad;
     private FOEnum tag;
     private String observation;
 }

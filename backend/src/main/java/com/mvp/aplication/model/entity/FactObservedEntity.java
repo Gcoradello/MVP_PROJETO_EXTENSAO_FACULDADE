@@ -21,6 +21,7 @@ public class FactObservedEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long soldierId;
+    private String squad;
     private String observation;
     private FOEnum tag;
 }
