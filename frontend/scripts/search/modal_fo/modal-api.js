@@ -4,35 +4,39 @@ let foRequest = {
     soldierId: null,
     squad: null,
     tag: "FO_POSSITIVE",
+    category: "",
     observation: ""
 };
+
+const URL = "http://localhost:8080/fo/include"
+const TAG_DEFAULT = "FO_POSSITIVE" 
+const HEADERS = {"Content-Type": "application/json"}
+const METHOD = "POST"
+const PLUS_TYPE = "plus"
 
 export function onModalOpen(event) {
     const button = event.relatedTarget;
 
     foRequest.soldierId = button.dataset.id;
     foRequest.squad = button.dataset.squad;
-    foRequest.tag = "FO_POSSITIVE";
+    foRequest.tag = TAG_DEFAULT;
+    foRequest.category
 
     resetUI();
 }
 
 export function selectFO(type) {
-    foRequest.tag = type === "plus" ? "FO_POSITIVE" : "FO_NEGATIVE";
-    updateUI(type);
+    foRequest.tag = type === PLUS_TYPE ? "FO_POSITIVE" : "FO_NEGATIVE";
+    updateUIFO(type);
 }
 
 export async function submitFO() {
     foRequest.observation = document.getElementById("obs-FO").value;
-
     console.log(foRequest);
 
-    
-    const response = await fetch("http://localhost:8080/fo/include", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
+    const response = await fetch(URL, {
+        method: METHOD,
+        headers: HEADERS,
         body: JSON.stringify(foRequest)
     });
 
@@ -43,13 +47,15 @@ export async function submitFO() {
     return response;
 }
 
-function updateUI(type) {
+
+
+function updateUIFO(type) {
     const label = document.getElementById('statusLabel');
     const bar = document.getElementById('statusBar');
     const btnPlus = document.getElementById('btn-fo-plus');
     const btnMinus = document.getElementById('btn-fo-minus');
 
-    if (type === 'plus') {
+    if (type === PLUS_TYPE) {
         label.innerText = 'FO+ POSITIVE';
         label.className = 'font-headline font-bold text-primary tracking-widest';
         bar.className = 'w-2 h-12 bg-primary';
@@ -66,8 +72,10 @@ function updateUI(type) {
     }
 }
 
+export function defineCategory(value) { foRequest.category = value; }
+
 function resetUI() {
-    updateUI("plus");
+    updateUIFO(PLUS_TYPE);
     document.getElementById("obs-FO").value = "";
 }
 
