@@ -26,6 +26,7 @@ export function createSoldierCard(Soldier) {
             <!-- BOTÃO -->
             <div class="w-1/4 text-right">
                 <button
+                    data-id="${Soldier.soldierId}"
                     data-bs-toggle="modal"
                     data-bs-target="#analyticsModal"
                     class="bg-secondary-container text-on-secondary-container text-xs font-bold px-4 py-2 hover:bg-surface-container-highest transition-colors">

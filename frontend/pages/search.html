@@ -84,7 +84,7 @@
     <script type="module" src="/frontend/scripts/search/search-squad/squad-main.js"></script>
     <script type="module" src="/frontend/scripts/search/modal_fo/modal-main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="/frontend/scripts/search/modal_analitics/analitics-main.js"></script>
+    <script type="module" src="/frontend/scripts/search/modal_analitics/analitics-main.js"></script>
     <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -171,6 +171,7 @@
                             class="w-full bg-surface-container-lowest border-none border-b border-outline-variant text-on-surface py-4 px-4 focus:ring-0 focus:border-primary transition-all font-body appearance-none cursor-pointer">
                             <option disabled="" selected="" value="">SELECT_PELOTÃO</option>
                             <option value="alpha">ALPHA_PELOTÃO</option>
+                            <option value="delta">DELTA_PELOTÃO</option>
                         </select>
                         <span
                             class="material-symbols-outlined absolute right-4 top-4 text-outline pointer-events-none">expand_more</span>
@@ -220,7 +221,7 @@
 
     <button 
         class="category-item p-4 border-2 border-outline-variant text-outline-variant font-headline text-xs font-bold uppercase tracking-widest transition-all hover:border-primary hover:text-primary hover:bg-primary/10"
-        data-value="LIDERANCA">
+        data-value="VESTIMENTA">
         VESTIMENTA
     </button>
 
@@ -232,7 +233,7 @@
 
     <button 
         class="category-item p-4 border-2 border-outline-variant text-outline-variant font-headline text-xs font-bold uppercase tracking-widest transition-all hover:border-primary hover:text-primary hover:bg-primary/10"
-        data-value="OPERACIONAL">
+        data-value="APARENCIA">
         APARENCIA
     </button>
 
@@ -280,7 +281,7 @@
             <!-- HEADER -->
             <div class="modal-header border-0 pb-0 px-8 pt-8 flex justify-between items-center">
                 <h5 class="font-headline font-bold text-primary tracking-widest uppercase">
-                    Tactical_Analytics_Dashboard
+                    Analitics dashboard
                 </h5>
                 <button class="text-outline hover:text-on-surface transition-colors" data-bs-dismiss="modal">
                     <span class="material-symbols-outlined">close</span>
@@ -322,15 +323,6 @@
                     </div>
 
                 </div>
-
-                <!-- 🔹 EXTRA -->
-                <div class="bg-surface-container-lowest p-4">
-                    <p class="text-xs text-outline uppercase mb-2">Insights</p>
-                    <p class="text-sm text-on-surface-variant">
-                        Alta concentração de FO+ no setor ALPHA nas últimas 24h.
-                    </p>
-                </div>
-
             </div>
 
             <!-- FOOTER -->

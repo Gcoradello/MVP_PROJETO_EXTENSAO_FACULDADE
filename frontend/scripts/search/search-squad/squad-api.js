@@ -13,6 +13,13 @@ export async function fetchSquad(squad) {
     //     throw new Error("Erro ao buscar usuários");
     // }
     //json test 
-    const response = await fetch('../scripts/search/search-squad/json-teste.json')
+
+    let response = "";
+    if (squad == "alpha") {
+        response = await fetch('../scripts/search/search-squad/json-teste-alpha.json')
+    } else {
+        response = await fetch('../scripts/search/search-squad/json-teste-delta.json')
+    }
+    
     return response.json();
 }
