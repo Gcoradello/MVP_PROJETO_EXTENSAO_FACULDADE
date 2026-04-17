@@ -21,16 +21,11 @@ public class SoldierController {
     @Autowired
     SoldierService service;
 
-    // todo - endpoint de post criação
-
-
     @PostMapping("/create")
     public ResponseEntity<Void> create (@RequestBody SoldierRequest request) {
         service.create(request);
         return ResponseEntity.ok().build();
     }
-
-    // todo - endpoint de get findBySoldierid
 
     @GetMapping("/{soldierId}")
     public ResponseEntity<SoldierResponse> findBySoldierId(@PathVariable Long soldierId) {
@@ -38,13 +33,10 @@ public class SoldierController {
         return ResponseEntity.ok(service.findBySoldierId(soldierId));
     }
 
-    // todo - endpoint de get findBySquad
-
     @GetMapping("/{squad}/squad")
     public ResponseEntity<List<SoldierResponse>> findBySoldierId(@PathVariable String squad) {
 
         return ResponseEntity.ok(service.findBySquad(squad));
     }
-
 
 }

@@ -16,6 +16,7 @@ public class FactObservedRequest {
     private String soldierId;
     private String squad;
     private FOEnum tag;
+    private String category;
     private String observation;
 }
 

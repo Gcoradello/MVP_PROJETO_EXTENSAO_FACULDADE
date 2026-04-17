@@ -23,5 +23,6 @@ public class FactObservedEntity {
     private Long soldierId;
     private String squad;
     private String observation;
+    private String category;
     private FOEnum tag;
 }

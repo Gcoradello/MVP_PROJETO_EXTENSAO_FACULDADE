@@ -12,8 +12,6 @@ import lombok.Setter;
 public class SoldierResponse {
 
     private String name;
-    private String secondName;
     private String squad;
     private Long soldierId;
-    private Long dateBirth;
 }

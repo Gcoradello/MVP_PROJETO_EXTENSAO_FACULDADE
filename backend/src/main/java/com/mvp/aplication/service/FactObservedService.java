@@ -17,7 +17,8 @@ public class FactObservedService {
     FactObservedMapper mapper;
 
     public void include( FactObservedRequest foRequest) {
-        // todo - validar se o soldado esta cadastrado
+        // todo - validar se o soldado existe;
+        // todo - tratar exceptions
         FactObservedEntity fo = mapper.toEntity(foRequest);
         repository.save(fo);
     }

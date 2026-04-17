@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2026-04-16T23:04:00-0300",
+    date = "2026-04-13T21:33:16-0300",
     comments = "version: 1.5.5.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-9.4.1.jar, environment: Java 17.0.12 (Oracle Corporation)"
 )
 @Component
@@ -23,8 +23,10 @@ public class SoldierMapperImpl implements SoldierMapper {
         SoldierResponse soldierResponse = new SoldierResponse();
 
         soldierResponse.setName( soldier.getName() );
+        soldierResponse.setSecondName( soldier.getSecondName() );
         soldierResponse.setSquad( soldier.getSquad() );
         soldierResponse.setSoldierId( soldier.getSoldierId() );
+        soldierResponse.setDateBirth( soldier.getDateBirth() );
 
         return soldierResponse;
     }
@@ -38,8 +40,10 @@ public class SoldierMapperImpl implements SoldierMapper {
         SoldierEntity soldierEntity = new SoldierEntity();
 
         soldierEntity.setName( request.getName() );
+        soldierEntity.setSecondName( request.getSecondName() );
         soldierEntity.setSquad( request.getSquad() );
         soldierEntity.setSoldierId( request.getSoldierId() );
+        soldierEntity.setDateBirth( request.getDateBirth() );
 
         return soldierEntity;
     }
