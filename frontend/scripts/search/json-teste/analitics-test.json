@@ -1,0 +1,31 @@
+[
+  { "category": "DISCIPLINA", "tag": "FO_POSITIVE" },
+  { "category": "DISCIPLINA", "tag": "FO_NEGATIVE" },
+  { "category": "VESTIMENTA", "tag": "FO_POSITIVE" },
+  { "category": "VESTIMENTA", "tag": "FO_NEGATIVE" },
+  { "category": "VESTIMENTA", "tag": "FO_NEGATIVE" },
+
+  { "category": "APARENCIA", "tag": "FO_POSITIVE" },
+  { "category": "APARENCIA", "tag": "FO_NEGATIVE" },
+  { "category": "CONDUTA", "tag": "FO_POSITIVE" },
+  { "category": "CONDUTA", "tag": "FO_NEGATIVE" },
+  { "category": "CONDUTA", "tag": "FO_NEGATIVE" },
+
+  { "category": "DISCIPLINA", "tag": "FO_POSITIVE" },
+  { "category": "DISCIPLINA", "tag": "FO_NEGATIVE" },
+  { "category": "VESTIMENTA", "tag": "FO_POSITIVE" },
+  { "category": "VESTIMENTA", "tag": "FO_NEGATIVE" },
+  { "category": "VESTIMENTA", "tag": "FO_NEGATIVE" },
+
+  { "category": "APARENCIA", "tag": "FO_POSITIVE" },
+  { "category": "APARENCIA", "tag": "FO_NEGATIVE" },
+  { "category": "CONDUTA", "tag": "FO_POSITIVE" },
+  { "category": "CONDUTA", "tag": "FO_NEGATIVE" },
+  { "category": "CONDUTA", "tag": "FO_NEGATIVE" },
+
+  { "category": "DISCIPLINA", "tag": "FO_POSITIVE" },
+  { "category": "DISCIPLINA", "tag": "FO_NEGATIVE" },
+  { "category": "APARENCIA", "tag": "FO_POSITIVE" },
+  { "category": "CONDUTA", "tag": "FO_NEGATIVE" },
+  { "category": "VESTIMENTA", "tag": "FO_NEGATIVE" }
+]
