@@ -1,4 +1,4 @@
-import {searchDataCategory} from "./analitics-api.js"
+import {searchDataCategory} from "./analitics-service.js"
 
 const modalAnalitics = document.getElementById('analyticsModal');
 let soldierId = "";
@@ -27,8 +27,6 @@ function initEvents() {
 }
 
 
-
-
 // TODO - VAMOS UTILIZAR AS INFORMAÇÔES DA API OU VAMOS DEIXAR ESTATICO ????
 async function loadCharts(soldierId) {
 
@@ -40,34 +38,40 @@ async function loadCharts(soldierId) {
         chartCategory.destroy(); 
     }
 
+    const data = await searchDataCategory(soldierId);
+
+    document.getElementById("kpi-total").innerText = data.totalFO;
+    document.getElementById("kpi-positive").innerText = data.percentagePositive + "%";
+    document.getElementById("kpi-negative").innerText = data.percentageNegative + "%";
+
+    // criar logica para integração com o endpoint de fos
     chartFO = new Chart(document.getElementById("chartFO"), {
         type: "bar",
         data: {
             labels: ["FO+", "FO-"],
             datasets: [{
-                data: [75, 25],
+                data: [data.positiveAll, data.negativeALL],
                 backgroundColor: [
-                    "#22c55e", // verde (FO+)
-                    "#ef4444"  // vermelho (FO-)
+                    "#22c55e", 
+                    "#ef4444"  
                 ]
             }]
         }
     });
 
-    const dataCategory = await searchDataCategory(soldierId);
 
     chartCategory = new Chart(document.getElementById("chartTimeline"), {
         type: "bar",
         data: {
-            labels: dataCategory.labels,
+            labels: data.labels,
             datasets: [
                 {
                     label: "FO+",
-                    data: dataCategory.positiveData
+                    data: data.positiveData
                 },
                 {
                     label: "FO-",
-                    data: dataCategory.negativeData
+                    data: data.negativeData
                 }
             ]
         }

@@ -7,7 +7,7 @@ export function createSoldierCard(Soldier) {
             <div class="flex items-center gap-4 w-1/3">
                 <div class="w-12 h-12 overflow-hidden">
                     <img class="w-full h-full object-cover"
-                        src="${Soldier.image}" />
+                        src="../../infra/assets/soldier.jpeg" />
                 </div>
                 <div>
                     <p class="text-xs text-outline">ID: ${Soldier.soldierId}</p>

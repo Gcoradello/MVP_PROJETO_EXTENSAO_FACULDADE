@@ -1,3 +1,8 @@
+const URL = "http://localhost:8080/fo/include"
+const TAG_DEFAULT = "FO_POSSITIVE" 
+const HEADERS = {"Content-Type": "application/json"}
+const METHOD = "POST"
+const PLUS_TYPE = "plus"
 
 // 🔹 estado central
 let foRequest = {
@@ -7,12 +12,6 @@ let foRequest = {
     category: "",
     observation: ""
 };
-
-const URL = "http://localhost:8080/fo/include"
-const TAG_DEFAULT = "FO_POSSITIVE" 
-const HEADERS = {"Content-Type": "application/json"}
-const METHOD = "POST"
-const PLUS_TYPE = "plus"
 
 export function onModalOpen(event) {
     const button = event.relatedTarget;

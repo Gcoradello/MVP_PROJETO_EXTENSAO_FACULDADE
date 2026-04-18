@@ -1,42 +1,25 @@
-export async function searchDataCategory(soldierId) {
 
-    const data = await findFOCategoryAnalitics(soldierId);
+let URL = "http://localhost:8080/fo/"
+const METHOD = "GET"
 
-    const categories = {};
+export async function findFOCategoryAnalitics(soldierId) {
     
-    data.forEach(item => {
-        if (!categories[item.category]) {
-            categories[item.category] = { positive: 0, negative: 0 };
-        }
 
-        if (item.tag === "FO_POSITIVE") {
-            categories[item.category].positive++;
-        } else {
-            categories[item.category].negative++;
-        }
-    });
+    if (soldierId) {
+        URL += `${encodeURIComponent(soldierId)}`;
+    } else {
+        throw new Error("id é obrigatório");
+    }
 
-    const labels = Object.keys(categories);
-    const positiveData = labels.map(cat => categories[cat].positive);
-    const negativeData = labels.map(cat => categories[cat].negative);
+    const response = await fetch(URL , {method: METHOD});
 
-    console.log(labels);
-    console.log(positiveData);
-    console.log(negativeData);
+    if (!response.ok) {
+        throw new Error("Erro ao buscar as FOs");
+    }
 
-    return { labels, positiveData, negativeData };
-}
-
-
-async function findFOCategoryAnalitics(soldierId) {
-    console.log(soldierId);
-
-    // todo - implementar o endpoint
-    const response = await fetch('../scripts/search/modal_analitics/analitics-test.json');
+    // teste
+    // const response = await fetch('../scripts/search/json-teste/analitics-test.json');
 
     return response.json();
     
 }
-
-
-

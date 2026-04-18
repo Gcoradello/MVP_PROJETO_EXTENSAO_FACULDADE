@@ -1,5 +1,6 @@
 package com.mvp.aplication.mapper;
 
+import com.mvp.aplication.controller.response.FactObservedResponse;
 import com.mvp.aplication.controller.resquest.FactObservedRequest;
 import com.mvp.aplication.model.entity.FactObservedEntity;
 import org.mapstruct.Mapper;
@@ -8,4 +9,5 @@ import org.mapstruct.Mapper;
 public interface FactObservedMapper  {
 
     FactObservedEntity toEntity(FactObservedRequest foRequest);
+    FactObservedResponse toResponse(FactObservedEntity entity);
 }
