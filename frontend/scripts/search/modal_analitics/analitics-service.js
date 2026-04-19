@@ -4,6 +4,7 @@ import { findFOCategoryAnalitics } from "./analitics-api.js"
 export async function searchDataCategory(soldierId) {
 
     const data = await findFOCategoryAnalitics(soldierId);
+
     
     const { labels, positiveData, negativeData } = extractCategoryData(data);
     const { positiveAll, negativeALL } = extractFOAll(data);

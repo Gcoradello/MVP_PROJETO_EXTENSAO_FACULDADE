@@ -20,7 +20,6 @@ function initEvents() {
 }
 
  function onModalAnaliticsOpen(event){
-
     const modalAnalitics = event.relatedTarget;
     soldierId = modalAnalitics.dataset.id;
     

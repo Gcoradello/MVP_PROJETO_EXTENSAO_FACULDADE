@@ -32,7 +32,7 @@ public class FactObservedController {
 
     @GetMapping("/{soldierId}")
     public ResponseEntity<List<FactObservedResponse>> findAllFactObservedBySoldierId(@PathVariable Long soldierId) {
-
+        System.out.println("chamou com o id:" + soldierId);
         List<FactObservedResponse> listFOS = service.findAllFOBySoldierId(soldierId);
 
         return ResponseEntity.ok(listFOS);

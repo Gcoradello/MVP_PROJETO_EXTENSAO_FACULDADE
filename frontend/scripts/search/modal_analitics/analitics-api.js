@@ -1,12 +1,12 @@
 
-let URL = "http://localhost:8080/fo/"
-const METHOD = "GET"
 
 export async function findFOCategoryAnalitics(soldierId) {
     
-
+    let URL = "http://localhost:8080/fo/"
+    const METHOD = "GET"
+    
     if (soldierId) {
-        URL += `${encodeURIComponent(soldierId)}`;
+          URL += `${encodeURIComponent(soldierId)}`;
     } else {
         throw new Error("id é obrigatório");
     }
@@ -20,6 +20,8 @@ export async function findFOCategoryAnalitics(soldierId) {
     // teste
     // const response = await fetch('../scripts/search/json-teste/analitics-test.json');
 
-    return response.json();
+    const data = response.json()
+
+    return data;
     
 }
