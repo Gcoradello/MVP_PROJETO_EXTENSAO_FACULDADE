@@ -11,5 +11,7 @@ form.addEventListener("submit", (e) => {
         squad: document.getElementById("form-squad").value
     };
 
-    createSoldier(data); 
+    const response = createSoldier(data); 
+
+    form.reset()
 });
