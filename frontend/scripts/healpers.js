@@ -11,12 +11,12 @@ export function extractFOAll(data) {
         }
     });
 
-    return {positiveAll, negativeALL}
+    return { positiveAll, negativeALL }
 }
 
 export function extractCategoryData(data) {
     const categories = {};
-    
+
     data.forEach(item => {
         if (!categories[item.category]) {
             categories[item.category] = { positive: 0, negative: 0 };
@@ -37,6 +37,6 @@ export function extractCategoryData(data) {
 }
 
 export function calculatePercentage(total, valor) {
-    if (total === 0) return 0; 
+    if (total === 0) return 0;
     return Math.round((valor / total) * 100);
 }

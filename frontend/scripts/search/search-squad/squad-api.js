@@ -1,8 +1,7 @@
-let URL = "http://backend:8080/soldier/"
+let URL = "http://localhost:8080/soldier/"
 const METHOD = "GET"
 
 export async function fetchSquad(squad) {
-    
 
     if (squad) {
         URL += `${encodeURIComponent(squad)}/squad`;

@@ -1,4 +1,4 @@
-import { searchDataSquad  } from "./analitics-service.js";
+import { searchDataSquad } from "./analitics-service.js";
 
 let chartFOAnalitics = null;
 let chartCategoryAnalitics = null;
@@ -14,11 +14,11 @@ document.getElementById("search-btn-analitics").addEventListener("click", () => 
 async function loadCharts(squad) {
 
     if (chartFOAnalitics) {
-        chartFOAnalitics.destroy(); 
+        chartFOAnalitics.destroy();
     }
 
     if (chartCategoryAnalitics) {
-        chartCategoryAnalitics.destroy(); 
+        chartCategoryAnalitics.destroy();
     }
 
     const data = await searchDataSquad(squad);
@@ -35,13 +35,26 @@ async function loadCharts(squad) {
             datasets: [
                 {
                     label: "FO+",
-                    data: data.positiveData
+                    data: data.positiveData,
+                    categoryPercentage: 0.8,
+                    barPercentage: 0.9
                 },
                 {
                     label: "FO-",
-                    data: data.negativeData
+                    data: data.negativeData,
+                    categoryPercentage: 0.8,
+                    barPercentage: 0.9
                 }
             ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                x: {
+                    offset: true
+                }
+            }
         }
     });
 }

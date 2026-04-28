@@ -1,4 +1,6 @@
-const URL = "http://backend:8080/soldier/create" 
+
+
+const URL = "http://localhost:8080/soldier/create" 
 const HEADERS = {"Content-Type": "application/json"}
 const METHOD = "POST"
 

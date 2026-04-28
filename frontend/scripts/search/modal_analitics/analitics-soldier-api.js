@@ -1,8 +1,7 @@
 
-
 export async function findFOCategoryAnalitics(soldierId) {
     
-    let URL = "http://backend:8080/fo/"
+    let URL = "http://localhost:8080/fo/"
     const METHOD = "GET"
     
     if (soldierId) {
