@@ -28,7 +28,7 @@ public class FactObservedService {
 
     public List<FactObservedResponse> findAllFOBySoldierId (Long soldierId) {
         List<FactObservedEntity> listFOS = repository.findAllBySoldierId(soldierId);
-
+        System.out.println(listFOS.size());
         return listFOS.stream().map(mapper::toResponse).toList();
     }
 }

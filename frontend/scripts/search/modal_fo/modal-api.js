@@ -1,5 +1,5 @@
 const URL = "http://localhost:8080/fo/include"
-const TAG_DEFAULT = "FO_POSSITIVE" 
+const TAG_DEFAULT = "FO_POSITIVE" 
 const HEADERS = {"Content-Type": "application/json"}
 const METHOD = "POST"
 const PLUS_TYPE = "plus"
@@ -8,7 +8,7 @@ const PLUS_TYPE = "plus"
 let foRequest = {
     soldierId: null,
     squad: null,
-    tag: "FO_POSSITIVE",
+    tag: TAG_DEFAULT,
     category: "",
     observation: ""
 };
@@ -18,7 +18,6 @@ export function onModalOpen(event) {
 
     foRequest.soldierId = button.dataset.id;
     foRequest.squad = button.dataset.squad;
-    foRequest.tag = TAG_DEFAULT;
     foRequest.category
 
     resetUI();
@@ -31,7 +30,6 @@ export function selectFO(type) {
 
 export async function submitFO() {
     foRequest.observation = document.getElementById("obs-FO").value;
-    console.log(foRequest);
 
     const response = await fetch(URL, {
         method: METHOD,
