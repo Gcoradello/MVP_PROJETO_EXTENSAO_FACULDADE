@@ -17,6 +17,10 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
+
+    <link
+        href="./style/search.css"
+        rel="stylesheet" />
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -81,52 +85,6 @@
             },
         }
     </script>
-    <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-
-        body {
-            background-color: #111316;
-            color: #e2e2e6;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .modal-content {
-            background-color: #1a1c1f;
-            border: none;
-            border-radius: 0;
-        }
-
-        .btn-check:checked+.btn-outline-success {
-            background-color: #4b5e41;
-            border-color: #b8cdaa;
-            color: #b8cdaa;
-        }
-
-        .btn-check:checked+.btn-outline-danger {
-            background-color: #93000a;
-            border-color: #ffb4ab;
-            color: #ffb4ab;
-        }
-
-        .custom-scrollbar::-webkit-scrollbar {
-            width: 4px;
-        }
-
-        .custom-scrollbar::-webkit-scrollbar-track {
-            background: #111316;
-        }
-
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #333538;
-        }
-    </style>
-    <style>
-        body {
-            min-height: max(884px, 100dvh);
-        }
-    </style>
 </head>
 
 <body class="bg-background text-on-background min-h-screen pb-20">
@@ -162,8 +120,7 @@
                         class="block font-headline text-primary text-xs tracking-[0.2em] font-bold uppercase">Personnel
                         Filtration Unit</label>
                     <div class="relative group">
-                        <select
-                            id="search-input"
+                        <select id="search-input"
                             class="w-full bg-surface-container-lowest border-none border-b border-outline-variant text-on-surface py-4 px-4 focus:ring-0 focus:border-primary transition-all font-body appearance-none cursor-pointer">
                             <option disabled="" selected="" value="">SELECT_PELOTÃO</option>
                             <option value="alpha">ALPHA_PELOTÃO</option>
@@ -172,8 +129,7 @@
                             class="material-symbols-outlined absolute right-4 top-4 text-outline pointer-events-none">expand_more</span>
                     </div>
                 </div>
-                <button
-                    id="search-btn"
+                <button id="search-btn"
                     class="bg-primary text-on-primary font-headline font-bold uppercase tracking-widest px-10 py-4 flex items-center justify-center gap-2 hover:bg-primary-fixed-dim active:scale-95 transition-all">
                     <span class="material-symbols-outlined text-lg">search</span>
                     Search
@@ -182,7 +138,7 @@
         </section>
         <!-- Results Grid -->
         <section id="users-container" class="flex flex-col gap-2"></section>
-</section>
+        </section>
     </main>
     <!-- Modal -->
     <div aria-hidden="true" class="modal fade" id="foModal" tabindex="-1">
@@ -208,31 +164,31 @@
                     <div class="space-y-6">
                         <div id="category" class="grid grid-cols-2 gap-4">
 
-    <button 
-        class="category-item p-4 border-2 border-outline-variant text-outline-variant font-headline text-xs font-bold uppercase tracking-widest transition-all hover:border-primary hover:text-primary hover:bg-primary/10"
-        data-value="DISCIPLINA">
-        DISCIPLINA
-    </button>
+                            <button
+                                class="category-item p-4 border-2 border-outline-variant text-outline-variant font-headline text-xs font-bold uppercase tracking-widest transition-all hover:border-primary hover:text-primary hover:bg-primary/10"
+                                data-value="DISCIPLINA">
+                                DISCIPLINA
+                            </button>
 
-    <button 
-        class="category-item p-4 border-2 border-outline-variant text-outline-variant font-headline text-xs font-bold uppercase tracking-widest transition-all hover:border-primary hover:text-primary hover:bg-primary/10"
-        data-value="VESTIMENTA">
-        VESTIMENTA
-    </button>
+                            <button
+                                class="category-item p-4 border-2 border-outline-variant text-outline-variant font-headline text-xs font-bold uppercase tracking-widest transition-all hover:border-primary hover:text-primary hover:bg-primary/10"
+                                data-value="VESTIMENTA">
+                                VESTIMENTA
+                            </button>
 
-    <button 
-        class="category-item p-4 border-2 border-outline-variant text-outline-variant font-headline text-xs font-bold uppercase tracking-widest transition-all hover:border-primary hover:text-primary hover:bg-primary/10"
-        data-value="CONDUTA">
-        CONDUTA
-    </button>
+                            <button
+                                class="category-item p-4 border-2 border-outline-variant text-outline-variant font-headline text-xs font-bold uppercase tracking-widest transition-all hover:border-primary hover:text-primary hover:bg-primary/10"
+                                data-value="CONDUTA">
+                                CONDUTA
+                            </button>
 
-    <button 
-        class="category-item p-4 border-2 border-outline-variant text-outline-variant font-headline text-xs font-bold uppercase tracking-widest transition-all hover:border-primary hover:text-primary hover:bg-primary/10"
-        data-value="APARENCIA">
-        APARENCIA
-    </button>
+                            <button
+                                class="category-item p-4 border-2 border-outline-variant text-outline-variant font-headline text-xs font-bold uppercase tracking-widest transition-all hover:border-primary hover:text-primary hover:bg-primary/10"
+                                data-value="APARENCIA">
+                                APARENCIA
+                            </button>
 
-</div>
+                        </div>
                         <div class="pt-6 border-t border-outline-variant/10">
                             <p class="font-label text-[10px] text-outline-variant uppercase mb-4">
                                 Tactical_Override_Protocol</p>
@@ -240,19 +196,18 @@
                                 <button
                                     class="flex-1 py-3 border-2 border-primary text-primary font-headline text-xs font-bold tracking-widest uppercase transition-all bg-primary/10 hover:bg-primary hover:text-on-primary"
                                     id="btn-fo-plus">
-                                    FO+ 
+                                    FO+
                                 </button>
                                 <button
                                     class="flex-1 py-3 border-2 border-outline-variant text-outline-variant font-headline text-xs font-bold tracking-widest uppercase transition-all hover:border-error hover:text-error hover:bg-error/10"
-                                    id="btn-fo-minus" >
-                                    FO- 
+                                    id="btn-fo-minus">
+                                    FO-
                                 </button>
                             </div>
                             <div class="space-y-2">
                                 <p class="font-label text-[10px] text-outline-variant uppercase">Field_Notes //
                                     Observações</p>
-                                <textarea
-                                    id="obs-FO"
+                                <textarea id="obs-FO"
                                     class="form-control w-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface font-body text-sm rounded-none focus:ring-1 focus:ring-primary focus:border-primary placeholder:text-outline-variant/50"
                                     placeholder="Adicionar observações..." rows="3"></textarea>
                             </div>
@@ -260,8 +215,7 @@
                     </div>
                 </div>
                 <div class="modal-footer border-0 p-8 pt-0">
-                    <button
-                        id="btn-submit-fo"
+                    <button id="btn-submit-fo"
                         class="w-full bg-on-surface text-surface font-headline font-bold uppercase tracking-widest py-4 hover:bg-surface-bright transition-all border-2 border-on-surface"
                         data-bs-dismiss="modal" type="button">Confirm_Changes</button>
                 </div>
@@ -270,74 +224,74 @@
     </div>
     <!-- MODAL ANALITICS -->
     <div aria-hidden="true" class="modal fade" id="analyticsModal" tabindex="-1">
-    <div class="modal-dialog modal-xl modal-dialog-centered">
-        <div class="modal-content border-0 bg-surface-container-low ring-1 ring-outline-variant/20">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content border-0 bg-surface-container-low ring-1 ring-outline-variant/20">
 
-            <!-- HEADER -->
-            <div class="modal-header border-0 pb-0 px-8 pt-8 flex justify-between items-center">
-                <h5 class="font-headline font-bold text-primary tracking-widest uppercase">
-                    Analitics dashboard
-                </h5>
-                <button class="text-outline hover:text-on-surface transition-colors" data-bs-dismiss="modal">
-                    <span class="material-symbols-outlined">close</span>
-                </button>
-            </div>
+                <!-- HEADER -->
+                <div class="modal-header border-0 pb-0 px-8 pt-8 flex justify-between items-center">
+                    <h5 class="font-headline font-bold text-primary tracking-widest uppercase">
+                        Analitics dashboard
+                    </h5>
+                    <button class="text-outline hover:text-on-surface transition-colors" data-bs-dismiss="modal">
+                        <span class="material-symbols-outlined">close</span>
+                    </button>
+                </div>
 
-            <!-- BODY -->
-            <div class="modal-body p-8 space-y-8">
+                <!-- BODY -->
+                <div class="modal-body p-8 space-y-8">
 
-                <!-- 🔹 KPIs -->
-                <div class="grid grid-cols-3 gap-4">
-                    <div class="p-4 bg-surface-container-lowest">
-                        <p class="text-xs text-outline uppercase">Total Observações</p>
-                        <h3 class="text-xl font-bold text-primary" id="kpi-total"></h3>
+                    <!-- 🔹 KPIs -->
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="p-4 bg-surface-container-lowest">
+                            <p class="text-xs text-outline uppercase">Total Observações</p>
+                            <h3 class="text-xl font-bold text-primary" id="kpi-total"></h3>
+                        </div>
+                        <div class="p-4 bg-surface-container-lowest">
+                            <p class="text-xs text-outline uppercase">FO+ Rate</p>
+                            <h3 class="text-xl font-bold text-primary" id="kpi-positive">/h3>
+                        </div>
+                        <div class="p-4 bg-surface-container-lowest">
+                            <p class="text-xs text-outline uppercase">FO- Rate</p>
+                            <h3 class="text-xl font-bold text-error" id="kpi-negative"></h3>
+                        </div>
                     </div>
-                    <div class="p-4 bg-surface-container-lowest">
-                        <p class="text-xs text-outline uppercase">FO+ Rate</p>
-                        <h3 class="text-xl font-bold text-primary" id="kpi-positive">/h3>
-                    </div>
-                    <div class="p-4 bg-surface-container-lowest">
-                        <p class="text-xs text-outline uppercase">FO- Rate</p>
-                        <h3 class="text-xl font-bold text-error" id="kpi-negative"></h3>
+
+                    <!-- 🔹 GRÁFICOS -->
+                    <div class="grid grid-cols-2 gap-6">
+
+                        <!-- Gráfico 1 -->
+                        <div class="bg-surface-container-lowest p-4">
+                            <p class="text-xs text-outline uppercase mb-2">FO Distribution</p>
+                            <canvas id="chartFO"></canvas>
+                        </div>
+
+                        <!-- Gráfico 2 -->
+                        <div class="bg-surface-container-lowest p-4">
+                            <p class="text-xs text-outline uppercase mb-2">Observações por Dia</p>
+                            <canvas id="chartTimeline"></canvas>
+                        </div>
+
                     </div>
                 </div>
 
-                <!-- 🔹 GRÁFICOS -->
-                <div class="grid grid-cols-2 gap-6">
-
-                    <!-- Gráfico 1 -->
-                    <div class="bg-surface-container-lowest p-4">
-                        <p class="text-xs text-outline uppercase mb-2">FO Distribution</p>
-                        <canvas id="chartFO"></canvas>
-                    </div>
-
-                    <!-- Gráfico 2 -->
-                    <div class="bg-surface-container-lowest p-4">
-                        <p class="text-xs text-outline uppercase mb-2">Observações por Dia</p>
-                        <canvas id="chartTimeline"></canvas>
-                    </div>
-
+                <!-- FOOTER -->
+                <div class="modal-footer border-0 p-8 pt-0">
+                    <button
+                        class="w-full bg-on-surface text-surface font-headline font-bold uppercase tracking-widest py-4 hover:bg-surface-bright transition-all border-2 border-on-surface"
+                        data-bs-dismiss="modal">
+                        CLOSE_ANALYTICS
+                    </button>
                 </div>
-            </div>
 
-            <!-- FOOTER -->
-            <div class="modal-footer border-0 p-8 pt-0">
-                <button
-                    class="w-full bg-on-surface text-surface font-headline font-bold uppercase tracking-widest py-4 hover:bg-surface-bright transition-all border-2 border-on-surface"
-                    data-bs-dismiss="modal">
-                    CLOSE_ANALYTICS
-                </button>
             </div>
-
         </div>
     </div>
-</div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="./scripts/search/search-squad/squad-main.js"></script>
     <script type="module" src="./scripts/search/modal_fo/modal-main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="module" src="./scripts/search/modal_analitics/analitics-soldier-main.js"></script>
-    
+
 </body>
 
 </html>
