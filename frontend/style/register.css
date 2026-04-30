@@ -1,0 +1,24 @@
+body {
+    min-height: max(884px, 100dvh);
+}
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Custom scrollbar for tactical aesthetic */
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: #111316;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333538;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #b8cdaa;
+}
