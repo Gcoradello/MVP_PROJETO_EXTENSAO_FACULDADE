@@ -41,3 +41,12 @@ body {
 body {
     min-height: max(884px, 100dvh);
 }
+
+.color-search  {
+   border-color: rgb(184 205 170);
+
+}
+
+.btn-color {
+    background-color: rgb(184 205 170) ;
+}
