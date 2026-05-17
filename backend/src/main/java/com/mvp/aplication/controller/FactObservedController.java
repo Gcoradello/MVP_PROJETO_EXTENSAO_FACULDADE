@@ -35,4 +35,11 @@ public class FactObservedController {
 
         return ResponseEntity.ok(listFOS);
     }
+
+    @GetMapping("/{squad}/squad")
+    public ResponseEntity<List<FactObservedResponse>> findAllFactObservedBySquad(@PathVariable String squad) {
+        List<FactObservedResponse> listFOS = service.findAllFOBySquad(squad);
+
+        return ResponseEntity.ok(listFOS);
+    }
 }
