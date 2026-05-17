@@ -1,31 +1,22 @@
 
-export function extractFOAll(data) {
+function extractFOAll(data) {
     let positiveAll = 0;
     let negativeALL = 0;
 
     data.forEach(item => {
-        if (item.tag === "FO_POSITIVE") {
-            positiveAll++;
-        } else {
-            negativeALL++;
-        }
+        positiveAll += item.positivesFOsQnt;
+        negativeALL += item.negativesFOsQnt
     });
 
     return { positiveAll, negativeALL }
 }
 
-export function extractCategoryData(data) {
+function extractCategoryData(data) {
     const categories = {};
 
     data.forEach(item => {
-        if (!categories[item.category]) {
-            categories[item.category] = { positive: 0, negative: 0 };
-        }
-
-        if (item.tag === "FO_POSITIVE") {
-            categories[item.category].positive++;
-        } else {
-            categories[item.category].negative++;
+        if (!categories[item.categoryName]) {
+            categories[item.categoryName] = { positive: item.positivesFOsQnt, negative: item.negativesFOsQnt };
         }
     });
 
@@ -36,7 +27,27 @@ export function extractCategoryData(data) {
     return { labels, positiveData, negativeData }
 }
 
-export function calculatePercentage(total, valor) {
+function calculatePercentage(total, valor) {
     if (total === 0) return 0;
     return Math.round((valor / total) * 100);
+}
+
+export function extractData (data) {
+
+    const { labels, positiveData, negativeData } = extractCategoryData(data);
+    const { positiveAll, negativeALL } = extractFOAll(data);
+    const totalFO = positiveAll + negativeALL;
+    const percentageNegative = calculatePercentage(totalFO, negativeALL);
+    const percentagePositive = calculatePercentage(totalFO, positiveAll);
+    
+    return { 
+        labels, 
+        positiveData, 
+        negativeData, 
+        positiveAll, 
+        negativeALL, 
+        percentagePositive, 
+        percentageNegative,
+        totalFO 
+    }
 }

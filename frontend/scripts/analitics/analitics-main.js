@@ -22,7 +22,8 @@ async function loadCharts(squad) {
     }
 
     const data = await searchDataSquad(squad);
-
+    console.log(data);
+    
     document.getElementById("squad-name").innerText = squad;
     document.getElementById("all-fo").innerText = data.totalFO;
     document.getElementById("all-fo-positive").innerText = data.percentagePositive + "%";
