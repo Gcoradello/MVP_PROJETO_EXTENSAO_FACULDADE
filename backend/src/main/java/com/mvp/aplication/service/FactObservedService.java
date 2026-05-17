@@ -5,6 +5,7 @@ import com.mvp.aplication.controller.resquest.FactObservedRequest;
 import com.mvp.aplication.infra.repository.FactObservedRepository;
 import com.mvp.aplication.mapper.FactObservedMapper;
 import com.mvp.aplication.model.entity.FactObservedEntity;
+import com.mvp.aplication.model.entity.FactObservedProjection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,8 +28,24 @@ public class FactObservedService {
     }
 
     public List<FactObservedResponse> findAllFOBySoldierId (Long soldierId) {
-        List<FactObservedEntity> listFOS = repository.findAllBySoldierId(soldierId);
+        List<FactObservedProjection> listFOS = repository.findAllBySoldierId(soldierId);
 
-        return listFOS.stream().map(mapper::toResponse).toList();
+        return buildListFOsResponse(listFOS);
+    }
+
+    public List<FactObservedResponse> findAllFOBySquad (String squad) {
+        List<FactObservedProjection> listFOS = repository.findAllBySquad(squad);
+
+        return buildListFOsResponse(listFOS);
+    }
+
+    private List<FactObservedResponse> buildListFOsResponse (List<FactObservedProjection> list) {
+        return list.stream()
+                .map(p -> new FactObservedResponse(
+                        p.getPositives(),
+                        p.getNegatives(),
+                        p.getCategory()
+                ))
+                .toList();
     }
 }

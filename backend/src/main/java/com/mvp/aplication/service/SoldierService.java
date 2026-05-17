@@ -40,7 +40,7 @@ public class SoldierService {
     public List<SoldierResponse> findBySquad (String squad) {
         // todo - tratar notfound
         List<SoldierEntity> squadList = repository.findBySquad(squad);
-
+        System.out.println(squadList);
         if (squad.isEmpty()) {
             throw new RuntimeException("Squad not found");
         }

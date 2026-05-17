@@ -28,12 +28,17 @@ public class FactObservedController {
         return ResponseEntity.ok().build();
     }
 
-    // todo - criar endpoint de find  de FOs
 
     @GetMapping("/{soldierId}")
     public ResponseEntity<List<FactObservedResponse>> findAllFactObservedBySoldierId(@PathVariable Long soldierId) {
-
         List<FactObservedResponse> listFOS = service.findAllFOBySoldierId(soldierId);
+
+        return ResponseEntity.ok(listFOS);
+    }
+
+    @GetMapping("/{squad}/squad")
+    public ResponseEntity<List<FactObservedResponse>> findAllFactObservedBySquad(@PathVariable String squad) {
+        List<FactObservedResponse> listFOS = service.findAllFOBySquad(squad);
 
         return ResponseEntity.ok(listFOS);
     }

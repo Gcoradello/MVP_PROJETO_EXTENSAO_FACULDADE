@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>TACTICAL_OS // OPERATIONAL INTERFACE</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="./scripts/config/tailwind.config.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="./style/index.css" />
+    <link rel="shortcut icon" href="../infra/assets/FAV.jpeg" type="image/x-icon">
+</head>
+
+<body class="bg-background text-on-surface selection:bg-primary selection:text-on-primary min-h-screen flex flex-col">
+    <!-- TopAppBar -->
+    <header
+        class="fixed top-0 w-full z-50 rounded-none bg-[#111316] h-16 flex justify-between items-center px-6 max-w-none">
+        <div class="flex items-center gap-4">
+            <span class="material-symbols-outlined text-[#b8cdaa] text-2xl" data-icon="terminal">terminal</span>
+            <span class="font-['Space_Grotesk'] text-xl font-bold tracking-tighter text-[#b8cdaa]">TACTICAL_OS</span>
+        </div>
+        <nav class="hidden md:flex items-center gap-8">
+            <a class="font-['Space_Grotesk'] uppercase tracking-widest text-sm text-[#b8cdaa] border-b-2 border-[#b8cdaa] pb-1"
+                href="#">Home</a>
+            <a class="font-['Space_Grotesk'] uppercase tracking-widest text-sm text-slate-500 hover:text-slate-200 transition-colors"
+                href="search.html">Search</a>
+            <a class="font-['Space_Grotesk'] uppercase tracking-widest text-sm text-slate-500 hover:text-slate-200 transition-colors"
+                href="register.html">Cadastro</a>
+            <a class="font-['Space_Grotesk'] uppercase tracking-widest text-sm text-slate-500 hover:text-slate-200 transition-colors"
+                href="analitcs.html">Análise</a>
+        </nav>
+    </header>
+    <!-- Main Operational Canvas -->
+    <main class="relative flex-1 flex items-center justify-center pt-16 hud-grid overflow-hidden">
+        <div class="scanline"></div>
+        <!-- Subtle Faint Texture -->
+        <div class="absolute inset-0 z-0 opacity-[0.03] pointer-events-none">
+            <img class="w-full h-full object-cover grayscale"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQYIhJJOcYTts2-HUuJJoHKQMXQ2IshrefrTRxgsBtcwiFPvHfWWk07TYB19aalk6CcXW6Inh3TWgoUhkwHNG---QSBSS6SCtEMCv3r7RdhVsN0nzt1_ABred8AImvF9iEvTSHMhVuLjzDy8yHDXXXHv3H8GnauNs4_5NvB9xkIaQBj83iEh4VBYb3S9q_5f5hC1YGFR_7CCZ0gttOyloDmZLYpcZKmNLy71Ydxv0iqklqHEiybpGdXE9Q1DkeknVlEXQCTV6QJh8" />
+        </div>
+        <!-- Minimalist Centerpiece -->
+        <section class="relative z-20 flex flex-col items-center gap-12 text-center">
+            <div class="flex flex-col items-center gap-4">
+                <div
+                    class="w-20 h-20 rounded-full border-2 border-primary/20 flex items-center justify-center relative">
+                    <div class="absolute inset-0 rounded-full border border-primary/40 animate-ping"></div>
+                    <span class="material-symbols-outlined text-primary text-4xl" data-icon="radar">radar</span>
+                </div>
+                <div class="flex flex-col items-center gap-1">
+                    <p class="font-['Space_Grotesk'] text-[10px] tracking-[0.4em] text-primary uppercase">System Status
+                    </p>
+                    <p class="font-['Space_Grotesk'] text-lg font-bold tracking-widest text-on-surface">OPTIMAL // READY
+                    </p>
+                </div>
+            </div>
+            
+        </section>
+        <!-- Decorative UI elements -->
+        <div class="absolute bottom-20 left-10 hidden md:block">
+            <div class="flex gap-1 mb-2">
+                <div class="w-1 h-4 bg-primary"></div>
+                <div class="w-1 h-4 bg-surface-container-highest"></div>
+                <div class="w-1 h-4 bg-surface-container-highest"></div>
+            </div>
+            <p class="text-[8px] font-mono text-slate-600">Projeto de extenção</p>
+        </div>
+        <div class="absolute top-20 right-10 hidden md:block text-right">
+            <p class="text-[8px] font-mono text-slate-600 uppercase tracking-widest">Caveirinha Digital</p>
+            <div class="h-[1px] w-24 bg-gradient-to-l from-primary/30 to-transparent mt-1"></div>
+        </div>
+    </main>
+</body>
+
+</html>

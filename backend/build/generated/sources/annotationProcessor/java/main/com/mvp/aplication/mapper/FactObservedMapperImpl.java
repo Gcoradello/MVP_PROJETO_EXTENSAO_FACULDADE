@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2026-04-18T01:21:52-0300",
+    date = "2026-05-04T23:59:14-0300",
     comments = "version: 1.5.5.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-9.4.1.jar, environment: Java 17.0.12 (Oracle Corporation)"
 )
 @Component
@@ -40,9 +40,6 @@ public class FactObservedMapperImpl implements FactObservedMapper {
         }
 
         FactObservedResponse factObservedResponse = new FactObservedResponse();
-
-        factObservedResponse.setTag( entity.getTag() );
-        factObservedResponse.setCategory( entity.getCategory() );
 
         return factObservedResponse;
     }

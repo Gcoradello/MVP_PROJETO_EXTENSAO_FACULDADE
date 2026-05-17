@@ -1,0 +1,43 @@
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+body {
+    background-color: #111316;
+    color: #e2e2e6;
+    font-family: 'Inter', sans-serif;
+}
+
+.modal-content {
+    background-color: #1a1c1f;
+    border: none;
+    border-radius: 0;
+}
+
+.btn-check:checked+.btn-outline-success {
+    background-color: #4b5e41;
+    border-color: #b8cdaa;
+    color: #b8cdaa;
+}
+
+.btn-check:checked+.btn-outline-danger {
+    background-color: #93000a;
+    border-color: #ffb4ab;
+    color: #ffb4ab;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #111316;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #333538;
+}
+
+body {
+    min-height: max(884px, 100dvh);
+}
